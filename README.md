@@ -1,2 +1,2 @@
-# ling-mod1
-Linguaggi di Programmazione - Modulo I
+# Linguaggi di Programmazione - Modulo I
+Materiale didattico per il corso di Linguaggi di Programmazione - Modulo I @ UniTN
