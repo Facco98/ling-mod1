@@ -60,10 +60,15 @@ public class GUI extends Application{
 
             try {
                 if( this.socket != null ) {
-                    BufferedWriter socketOut = new BufferedWriter(new OutputStreamWriter(this.socket.getOutputStream()));
-                    socketOut.write(txtMessage.getText());
-                    socketOut.newLine();
-                    socketOut.flush();
+
+                    if( this.txtMessage.getText().trim().toLowerCase().equals("bye")){
+                        socket.close();
+                    } else {
+                        BufferedWriter socketOut = new BufferedWriter(new OutputStreamWriter(this.socket.getOutputStream()));
+                        socketOut.write(txtMessage.getText().trim());
+                        socketOut.newLine();
+                        socketOut.flush();
+                    }
                 }
             } catch (IOException e1) {
                 new Alert(Alert.AlertType.ERROR, "Non riesco a inviare il messaggio al server");
